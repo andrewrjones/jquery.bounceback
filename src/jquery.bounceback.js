@@ -11,7 +11,17 @@
   // Collection method.
   $.fn.bounceback = function() {
     return this.each(function() {
-      $(this).html('awesome');
+      var el = $(this);
+      
+      // TODO: when we hit the bottom, stop processing event while we animate
+      el.scroll(function(){
+        if (el[0].scrollHeight - el.scrollTop() === el.outerHeight()) {
+          // We're at the bottom.
+          console.log("bottom" + el.height() );
+          el.height( el.height() + 44);
+          // TODO: do animation
+        }
+      });
     });
   };
 
