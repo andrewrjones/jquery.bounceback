@@ -50,6 +50,7 @@ module.exports = function(grunt) {
         }
       }
     },
+    clean: ['dist'],
     qunit: {
       files: ['test/**/*.html']
     },
@@ -90,4 +91,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jade');
   grunt.loadNpmTasks('grunt-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 };

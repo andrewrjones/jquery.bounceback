@@ -29,7 +29,8 @@
     "grunt": "*",
     "grunt-jade": "*",
     "grunt-less": "*",
-    "grunt-contrib-copy": "*"
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-clean": "*"
   },
   "keywords": []
 }
