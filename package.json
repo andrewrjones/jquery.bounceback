@@ -30,7 +30,8 @@
     "grunt-jade": "*",
     "grunt-less": "*",
     "grunt-contrib-copy": "*",
-    "grunt-contrib-clean": "*"
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compress": "*"
   },
   "keywords": []
 }

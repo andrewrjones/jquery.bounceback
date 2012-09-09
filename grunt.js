@@ -51,6 +51,16 @@ module.exports = function(grunt) {
       }
     },
     clean: ['dist'],
+    compress: {
+      zip: {
+        options: {
+          mode: "zip"
+        },
+        files: {
+          "<%= pkg.name %>.zip": ["dist/**"]
+        }
+      }
+    },
     qunit: {
       files: ['test/**/*.html']
     },
@@ -92,4 +102,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  // TODO: want the zip to contain a top level directory
+  grunt.loadNpmTasks('grunt-contrib-compress');
 };
