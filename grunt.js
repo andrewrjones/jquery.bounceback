@@ -38,6 +38,18 @@ module.exports = function(grunt) {
         dest: "dist/index.css"
       }
     },
+    copy: {
+      dist: {
+        options: {
+          flatten: true
+        },
+        files: {
+          'dist': [
+            'LICENSE-MIT', 'README.md', 'ext/bootstrap/bootstrap.min.css'
+          ]
+        }
+      }
+    },
     qunit: {
       files: ['test/**/*.html']
     },
@@ -77,18 +89,5 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-jade');
   grunt.loadNpmTasks('grunt-less');
-  
-  // TODO: create generic copy task
-  grunt.registerTask('copy', 'Copy misc files to dist', function() {
-    var files = [
-      'LICENSE-MIT',
-      'README.md',
-      'ext/bootstrap/bootstrap.min.css'
-    ];
-    
-    files.forEach(function(f) {
-      var name = f.split("/").pop();
-      grunt.file.copy(f, "dist/" + name);
-    });
-  });
+  grunt.loadNpmTasks('grunt-contrib-copy');
 };
