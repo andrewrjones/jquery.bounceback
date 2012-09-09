@@ -23,6 +23,21 @@ module.exports = function(grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
+    jade: {
+      html: {
+        src: ["docs/index.jade"],
+        dest: "dist",
+        options: {
+          client: false
+        }
+      }
+    },
+    less: {
+      index: {
+        src: "docs/index.less",
+        dest: "dist/index.css"
+      }
+    },
     qunit: {
       files: ['test/**/*.html']
     },
@@ -55,6 +70,24 @@ module.exports = function(grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', 'lint qunit concat min');
+  grunt.registerTask('default', 'lint concat min');
 
+  grunt.registerTask('dist', 'default jade less copy');
+
+  grunt.loadNpmTasks('grunt-jade');
+  grunt.loadNpmTasks('grunt-less');
+  
+  // TODO: create generic copy task
+  grunt.registerTask('copy', 'Copy misc files to dist', function() {
+    var files = [
+      'LICENSE-MIT',
+      'README.md',
+      'ext/bootstrap/bootstrap.min.css'
+    ];
+    
+    files.forEach(function(f) {
+      var name = f.split("/").pop();
+      grunt.file.copy(f, "dist/" + name);
+    });
+  });
 };

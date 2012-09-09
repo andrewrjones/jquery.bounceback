@@ -23,7 +23,12 @@
     }
   ],
   "dependencies": {
-    "jquery": "~1.5"
+    "jquery": "~1.7"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-jade": "*",
+    "grunt-less": "*"
   },
   "keywords": []
 }
