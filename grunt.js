@@ -54,7 +54,8 @@ module.exports = function(grunt) {
     compress: {
       zip: {
         options: {
-          mode: "zip"
+          mode: "zip",
+          rootDir: "jquery.bounceback"
         },
         files: {
           "<%= pkg.name %>.zip": ["dist/**"]

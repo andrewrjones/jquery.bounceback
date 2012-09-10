@@ -31,7 +31,7 @@
     "grunt-less": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-compress": "*"
+    "grunt-contrib-compress": "git://github.com/gruntjs/grunt-contrib-compress.git"
   },
   "keywords": []
 }
